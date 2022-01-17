@@ -11,18 +11,41 @@
 <body>
 
   <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
-    <label for="input-address">ETH Address</label>
-    <input id="input-address" />
+    <form id="token-form" class="form-container">
+      <div class="input-container">
+        <div class="content">
+          <label for="input-address">ETH Address</label>
+          <input id="input-address" oninput="validateInputs('address')" required />
+        </div>
+        <p id="address-error" class="error"></p>
+      </div>
 
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
+      <div class="input-container">
+        <div class="content">
+          <label for="input-amount">Amount to Send</label>
+          <input id="input-amount" oninput="validateInputs('amount')" required />  
+        </div>
+        <p id="amount-error" class="error"></p>
+      </div>
 
-    <label for="input-otp">OTP Authentication</label>
-    <input type="number" id="input-otp" />
+      <div class="input-container">
+        <div class="content">
+          <label for="input-otp">OTP Authentication</label>
+          <input type="number" oninput="validateInputs('otp')" id="input-otp" required />
+        </div>
+        <p id="otp-error" class="error"></p>
+      </div>
+      <p id="submit-result"></p>
 
-    <button>SEND TOKENS</button>
-  </form>
+      <div class="action-group">
+        <button id="submit-btn" class="btn" type="submit" disabled>SEND TOKENS</button>
+        <button id="reset-btn" class="btn" type="reset">RESET INPUTS</button>
+      </div>
+      <div id="loader-overlay">
+        <div class="loader"></div>
+      </div>
+    </form>
+
   <script src="script.js"></script>
 </body>
 

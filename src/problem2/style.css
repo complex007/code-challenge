@@ -3,6 +3,126 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  min-width: 360px;
+  min-width: 500px;
   font-family: Arial, Helvetica, sans-serif;
+  color: #003566;
+  font-size: large;
+}
+.form-container{
+  display: flex;
+  flex-direction: column;
+  border: solid 3px #000814;
+  border-radius: 6px;
+  padding: 0;
+  margin: 0;
+  width: 30rem;
+  height: 19rem;
+}
+.input-container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  min-height: 3rem;
+}
+#token-form > .input-container ~ .input-container{
+  margin-top: 1rem;
+}
+.content{
+  display: flex;
+}
+.content input {
+  flex-grow: 1;
+  margin: 0 0 0 1rem;
+  padding: 0;
+}
+.btn{
+  color: white;
+  border: none;
+  height: 2rem;
+  font-weight: bold;
+  border-radius: 6px;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+#submit-btn{
+  background-color:#003566;
+  align-self: center;
+}
+#submit-btn:disabled{
+  background-color:grey;
+}
+#reset-btn {
+  background-color:#ffc300;
+  display: none;
+}
+.error{
+  color: red;
+  margin: 0;
+}
+#loader-overlay {
+  position: absolute;
+  flex-grow: 1;
+  width: 30rem;
+  height: 19rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  opacity: 0.5;
+  display: none;
+}
+.loader {
+  border: 10px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 10px solid #003566;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+.action-group{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+}
+#submit-result{
+  text-align: center;
+  font-weight: bold;
+  height: 2rem;
+  margin: 1rem;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 600px) {
+  body, input, button {
+    font-size:30px;
+  }
+
+  .btn {
+    height: 4rem;
+  }
+
+  .form-container, #loader-overlay  {
+    height: 32rem;
+  }
+
+  .input-container .content{
+    display: flex;
+    flex-direction: column;
+  }
+  
 }
