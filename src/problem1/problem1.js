@@ -6,11 +6,11 @@ var sum_to_n_a = function(n) {
   let result = 0;
 
   if (isNegative) {
-    for(let i = -1; i >= n; i --) {
+    for(let i = -1; i >= n; i--) {
       result += i;
     }
   } else {
-    for(let i = 1; i <= n; i ++) {
+    for(let i = 1; i <= n; i++) {
       result += i;
     }
   }
@@ -29,7 +29,7 @@ var sum_to_n_b = function(n) {
   const firstNum = isNegative? -1 : 1;
   const result = (firstNum + n) * n / 2;
 
-  return isNegative? -1 * result : result;
+  return isNegative? -result : result;
 };
 
 var sum_to_n_c = function(n) {
@@ -43,5 +43,5 @@ var sum_to_n_c = function(n) {
   return isNegative? sum_to_n_c(n+1) + n : sum_to_n_c(n-1) + n;
 };
 
-const testValue = -2
-console.log(`sum_to_n_a:${sum_to_n_a(testValue)} sum_to_n_b: ${sum_to_n_b(testValue)} sum_to_n_c:${sum_to_n_c(testValue)} `)
+const testValue = -12;
+console.log(`sum_to_n_a:${sum_to_n_a(testValue)} sum_to_n_b: ${sum_to_n_b(testValue)} sum_to_n_c:${sum_to_n_c(testValue)} `);

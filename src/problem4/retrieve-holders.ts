@@ -1,6 +1,6 @@
 import { ethers } from 'ethers';
 
-const numWithComma = (num:String) => {
+const numWithComma = (num: string): string => {
   const [integerPart, decimalPart] = num.split('.');
   let sum = '';
 
@@ -28,6 +28,7 @@ const daiAbi = [
 
 // The Contract object
 const daiContract = new ethers.Contract(daiAddress, daiAbi, bscProvider);
+
 [
   '0x123d475e13aa54a43a7421d94caa4459da021c77',
   '0x0020c5222a24e4a96b720c06b803fb8d34adc0af',
